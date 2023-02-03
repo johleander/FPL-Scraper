@@ -1,0 +1,2 @@
+python3 general.py : Get all data 
+python3 generateOutput.py: Generate output for players in json-format (combined player and general data)
