@@ -2,6 +2,7 @@ from asyncio import constants
 import get_data
 import pandas as pd
 import numpy as np
+import constants as fpl_consts
 
 
 generalData = get_data.get_main_data(True)
@@ -18,26 +19,24 @@ for index, row in elements_df.iterrows():
     get_data.get_element_data(id,name, True)
 
 #GET FIXTURES 
+
 get_data.get_fixtures(True)
 
 #GET GAMEWEEK DATA  
 get_data.get_gameweek_data()
 
 #GET TEAM DATA 
-get_data.get_team_data(1110439, True)
+get_data.get_team_data(fpl_consts.MY_FPL_MANAGER_ID , True)
 
 #GET TEAM HISTORY DATA
-get_data.get_team_history_data(1110439, True)
+get_data.get_team_history_data(fpl_consts.MY_FPL_MANAGER_ID, True)
 
 #GET TEAM TRANSFERS 
-get_data.get_team_transfers_data(1110439, True)
+get_data.get_team_transfers_data(fpl_consts.MY_FPL_MANAGER_ID, True)
 
 #GET SQUAD PICKS FOR ME 
 
 for x in range(38):
-    get_data.squad_picks(1110439,x+1, True)
+    get_data.squad_picks(fpl_consts.MY_FPL_MANAGER_ID,x+1, True)
 
-
-#GET LEAGUE STANDINGS FOR STÅNGBY LEAGUE
-data = get_data.league_standings(227667, 1)
 

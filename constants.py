@@ -1,8 +1,9 @@
 
-MY_FPL_MANAGER_ID = 1110439;
-STANGBY_LEAGUE_ID = 227667;
+#Update yearly 
+MY_FPL_MANAGER_ID = 555024
+RESPONSES_YEAR = "data/2024-25"
 
-
+## URLS ## 
 BASE_URL = "https://fantasy.premierleague.com/api/"
 MAIN_DATA_URL = BASE_URL + "bootstrap-static/"
 FIXTURES_URL = BASE_URL + "fixtures/"

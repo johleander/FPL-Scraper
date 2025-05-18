@@ -5,7 +5,6 @@ from jsonParser import writeToJson
 import os
 
 dirname = os.path.dirname(__file__)
-responsesYear = "data/2022-23"
 
 def get_data(url): 
     response = requests.get(url)
@@ -22,7 +21,7 @@ def get_main_data(saveResponse = False):
     data = get_data(url)
     
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/general.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/general.json"), data)
     return data
 
 def get_fixtures(saveResponse = False):
@@ -31,7 +30,7 @@ def get_fixtures(saveResponse = False):
     data =  get_data(url)
 
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/fixtures.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/fixtures.json"), data)
     return data
     
 def get_gameweek_data():
@@ -41,7 +40,7 @@ def get_gameweek_data():
     for x in range(38):
         gw_url = url.format(x+1)
         data =  get_data(gw_url)
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/GW/gw{x+1}.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/GW/gw{x+1}.json"), data)
          
 
 
@@ -52,7 +51,7 @@ def get_team_data(teamId, saveResponse = False):
     data = get_data(team_url)
 
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/team.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/team.json"), data)
     return data
 
 def get_team_history_data(teamId, saveResponse = False):
@@ -62,7 +61,7 @@ def get_team_history_data(teamId, saveResponse = False):
     data = get_data(team_history_url)
 
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/team_history.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/team_history.json"), data)
     return data
 
 def get_team_transfers_data(teamId, saveResponse = False):
@@ -72,7 +71,7 @@ def get_team_transfers_data(teamId, saveResponse = False):
     data = get_data(team_transfers_url )
 
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/team_transfers.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/team_transfers.json"), data)
     return data
 
 
@@ -83,7 +82,7 @@ def squad_picks(teamId, gw, saveResponse = False):
     picks_url = url.format(teamId, gw)
     data = get_data(picks_url)
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/GW/my_gw_{gw}.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/GW/my_gw_{gw}.json"), data)
     return data
 
 def league_standings(leagueId, page = 1, saveResponse = False):
@@ -93,7 +92,7 @@ def league_standings(leagueId, page = 1, saveResponse = False):
     data = get_data(standings_url)
     leagueIdStr = str(leagueId)
     if(saveResponse):
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/league_{leagueIdStr}.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/league_{leagueIdStr}.json"), data)
     return data
 
 def get_element_data(elementId, fileName, saveResponse = False):
@@ -103,6 +102,6 @@ def get_element_data(elementId, fileName, saveResponse = False):
     data = get_data(element_url)
     if(saveResponse):
         name = str(elementId)+"_"+fileName
-        writeToJson(os.path.join(dirname, f"./{responsesYear}/Elements/{name}.json"), data)
+        writeToJson(os.path.join(dirname, f"./{constants.RESPONSES_YEAR}/Elements/{name}.json"), data)
     return data
 

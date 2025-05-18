@@ -11,7 +11,7 @@ def convertToTeamName(teams_df,id):
 
 
 dirname = os.path.dirname(__file__)
-years = ["2021-22", "2022-23"]
+years = ["2021-22", "2022-23", "2023-24", "2024-25"]
 players = []
 
 excluded_elements_columns = [
