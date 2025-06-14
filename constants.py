@@ -1,7 +1,7 @@
 
 #Update yearly 
 MY_FPL_MANAGER_ID = 555024
-RESPONSES_YEAR = "data/2024-25"
+RESPONSES_YEAR = "data/2025-26"
 
 ## URLS ## 
 BASE_URL = "https://fantasy.premierleague.com/api/"
